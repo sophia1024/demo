@@ -4,13 +4,13 @@
       <el-row :gutter="20">
         <el-col :span="6">
           <div class="grid-content bg-purple">
-            <el-button
-              type="primary"
-              icon="el-icon-arrow-left"
-              @click="setRouter"
-            >
-              返回主页
-            </el-button>
+            <!--<el-button-->
+              <!--type="primary"-->
+              <!--icon="el-icon-arrow-left"-->
+              <!--@click="setRouter"-->
+            <!--&gt;-->
+              <!--返回主页-->
+            <!--</el-button>-->
           </div>
         </el-col>
       </el-row>
@@ -29,6 +29,7 @@
       <el-col :span="6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
+            <div>类型：{{modifyImgType(list1,'类型1')}}</div>
             <draggable class="list-group" tag="ul" v-model="list1" v-bind="dragOptions" :move="onMove"
                        @start="isDragging=true"
                        @end="isDragging=false">
@@ -46,6 +47,7 @@
       <el-col :span="6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
+            <div>类型：{{modifyImgType(list2,'类型2')}}</div>
             <draggable class="list-group" tag="ul" v-model="list2" v-bind="dragOptions" :move="onMove"
                        @start="isDragging=true"
                        @end="isDragging=false">
@@ -63,6 +65,7 @@
       <el-col :span="6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
+            <div>类型：{{modifyImgType(list3,'类型3')}}</div>
             <draggable class="list-group" tag="ul" v-model="list3" v-bind="dragOptions" :move="onMove"
                        @start="isDragging=true"
                        @end="isDragging=false">
@@ -80,6 +83,7 @@
       <el-col :span="6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
+            <div>类型：{{modifyImgType(list4,'类型4')}}</div>
             <draggable class="list-group" tag="ul" v-model="list4" v-bind="dragOptions" :move="onMove"
                        @start="isDragging=true"
                        @end="isDragging=false">
@@ -132,7 +136,7 @@ export default {
         this.list1 = this.filterImg('1')
         this.list2 = this.filterImg('2')
         this.list3 = this.filterImg('3')
-        console.log(this.list4)
+        // console.log(this.list4)
       })
     },
     filterImg (type) {
@@ -154,6 +158,12 @@ export default {
       return (
         (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
       )
+    },
+    modifyImgType (list, type) {
+      list.map(res => {
+        res.type = type
+      })
+      return type
     }
   },
   created () {

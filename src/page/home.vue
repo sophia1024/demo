@@ -38,7 +38,8 @@
         </el-row>
       </header>
       <main class="el-main">
-        <router-view></router-view>
+        <!--<router-view></router-view>-->
+        <component :is="comname"></component>
       </main>
       <footer class="el-footer" style="height: 60px;">Footer</footer>
     </section>
@@ -47,6 +48,8 @@
 
 <script>
 import connector from '../unit/connector'
+import homeList from './homeList'
+import editType from './editType'
 
 export default {
   name: 'HelloWorld',
@@ -74,6 +77,7 @@ export default {
           label: '类别4'
         }
       ],
+      comname: 'homeList',
       value: '全部',
       classDrag: false,
       imgAllInfo: [],
@@ -82,6 +86,10 @@ export default {
         text: '时间倒序'
       }
     }
+  },
+  components: {
+    homeList,
+    editType
   },
   methods: {
     emitMessage (isSort, value) {
@@ -107,7 +115,8 @@ export default {
       connector.$emit('isType', value)
     },
     setRouter () {
-      this.$router.push('/editType')
+      // this.$router.push('/editType')
+      this.comname = (this.comname === 'editType' ? 'homeList' : 'editType')
     }
   }
 }

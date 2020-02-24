@@ -13,7 +13,7 @@ import connector from '../unit/connector'
 import imgItem from '../components/imgItem'
 
 export default {
-  name: 'home',
+  name: 'homeList',
   data () {
     return {
       isSort: false,

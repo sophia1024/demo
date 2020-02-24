@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: () => import(/* webpackChunkName: "HelloWorld" */ '@/page/home'),
+      component: () => import(/* webpackChunkName: "home" */ '@/page/home'),
       children: [
         {
           path: '/home',
@@ -22,13 +22,13 @@ export default new Router({
         {
           path: 'homeList',
           name: 'list',
-          component: () => import(/* webpackChunkName: "HelloWorld" */ '@/page/homeList')
+          component: () => import(/* webpackChunkName: "home" */ '@/page/homeList')
         }
       ]
     }, {
       path: '/editType',
       name: 'editType',
-      component: () => import(/* webpackChunkName: "HelloWorld" */ '@/page/editType')
+      component: () => import(/* webpackChunkName: "editType" */ '@/page/editType')
     }
   ]
 })
