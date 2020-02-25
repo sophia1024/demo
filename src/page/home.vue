@@ -8,7 +8,7 @@
             <div class="grid-content bg-purple-dark">
               <el-button
               type="primary"
-              :class="{'isNone':$unitParams < 450 }"
+              :class="{'isNone':$store.state.deviceWidth < 450 }"
               :icon="elIconInf.icon"
               @click.capture="emitMessage(true)"
             >
@@ -93,6 +93,7 @@ export default {
     editType
   },
   created () {
+    console.log(this.$unitParams)
   },
   methods: {
     emitMessage (isSort, value) {

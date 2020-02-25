@@ -2,7 +2,7 @@
   <div class="fluid container">
     <div class="form-group form-group-lg panel panel-default">
       <el-row :gutter="20">
-        <el-col :span="$unitParams < 450 ? 24: 6">
+        <el-col :span="$store.state.deviceWidth < 450 ? 24: 6">
           <div class="grid-content bg-purple">
             <!--<el-button-->
               <!--type="primary"-->
@@ -26,7 +26,7 @@
 
     <el-row :gutter="20">
 
-      <el-col :span="$unitParams < 450 ? 24: 6">
+      <el-col :span="$store.state.deviceWidth < 450 ? 24: 6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
             <div>类型：{{modifyImgType(list1,'类型1')}}</div>
@@ -44,7 +44,7 @@
         </div>
       </el-col>
 
-      <el-col :span="$unitParams < 450 ? 24: 6">
+      <el-col :span="$store.state.deviceWidth < 450 ? 24: 6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
             <div>类型：{{modifyImgType(list2,'类型2')}}</div>
@@ -62,7 +62,7 @@
         </div>
       </el-col>
 
-      <el-col :span="$unitParams < 450 ? 24: 6">
+      <el-col :span="$store.state.deviceWidth < 450 ? 24: 6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
             <div>类型：{{modifyImgType(list3,'类型3')}}</div>
@@ -80,7 +80,7 @@
         </div>
       </el-col>
 
-      <el-col :span="$unitParams < 450 ? 24: 6">
+      <el-col :span="$store.state.deviceWidth < 450 ? 24: 6">
         <div class="grid-content bg-purple">
           <div class="col-md-3">
             <div>类型：{{modifyImgType(list4,'类型4')}}</div>
