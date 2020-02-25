@@ -8,6 +8,7 @@
             <div class="grid-content bg-purple-dark">
               <el-button
               type="primary"
+              :class="{'isNone':$unitParams < 450 }"
               :icon="elIconInf.icon"
               @click.capture="emitMessage(true)"
             >
@@ -91,6 +92,8 @@ export default {
     homeList,
     editType
   },
+  created () {
+  },
   methods: {
     emitMessage (isSort, value) {
       let that = this
@@ -123,6 +126,9 @@ export default {
 </script>
 
 <style scoped>
+  .layout{
+    padding-top: 40px;
+  }
   .el-main-imgInf {
     display: flex;
     justify-content: center;
@@ -137,5 +143,7 @@ export default {
     width: 200px;
     height: 130px;
   }
-
+.isNone{
+  display: none;
+}
 </style>

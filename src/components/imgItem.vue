@@ -33,7 +33,8 @@ export default {
     .el-main-imgInf {
       display: flex;
       justify-content: center;
-      align-items: center;
+      overflow: hidden;
+      flex-wrap: wrap;
 
       p {
         padding: 10px;

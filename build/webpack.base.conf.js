@@ -51,15 +51,6 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
-      { // 注意test的value，是正则表达式不是字符串
-        test: /\.css$/, use: [
-          {
-            loader: 'style-loader',
-          },
-          'css-loader'
-        ],
-        exclude:/node_modules/, //排除掉node_modules中的js
-      },
       {
         test: /\.stylus$/, use: [
           {
@@ -68,7 +59,8 @@ module.exports = {
           'css-loader',
           // 将less文件转换成css文件
           'stylus-loader' // 需要less和less-loader两个
-        ]
+        ],
+        exclude: ['/node_modules/']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
