@@ -8,7 +8,7 @@
 export default {
   name: 'App',
   return: {
-    deviceWidth: 1024
+    deviceWidth: 360
   },
   methods: {
     getWidth () {
@@ -22,7 +22,7 @@ export default {
           resolve(deviceWidth)
         }).then(res => {
           console.log(res)
-          that.deviceWidth = res > deviceWidth ? deviceWidth : res
+          that.deviceWidth = res < 320 ? 320 : res
           that.$store.commit('modifyWidth', that.deviceWidth)
         }
         )

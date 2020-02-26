@@ -5,23 +5,21 @@ import App from './App'
 import router from './router'
 import axiosVue from 'axios'
 import store from './store/index'
-import ElementUI from 'element-ui'
-// import unitFun from './unit/getPageWidth/getPageWidth'
-import 'element-ui/lib/theme-chalk/index.css'
+// import ElementUI from 'element-ui'
+import { Button, Select, Image, Option, Row, Col } from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
 import './style/reset.css'
-// import draggable from 'vuedraggable'
-Vue.use(ElementUI)
-// var deviceWidth = document.documentElement.clientWidth
-// Vue.use(draggable)
+import Ant from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.use(Ant)
+Vue.use(Image)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(Button)
+Vue.use(Row)
+Vue.use(Col)
 Vue.prototype.axios = axiosVue
 Vue.config.productionTip = false
-// const getWidth = () => {
-//   let deviceWidth = document.documentElement.clientWidth
-//   Vue.prototype.$unitParams = deviceWidth
-//   console.log(deviceWidth)
-// }
-// getWidth()
-// window.addEventListener('resize', getWidth)
 
 /* eslint-disable no-new */
 new Vue({

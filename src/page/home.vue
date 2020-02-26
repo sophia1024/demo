@@ -2,7 +2,6 @@
   <div class="layout">
     <section class="el-container is-vertical">
       <header class="el-header">
-
         <el-row>
           <el-col :span="24">
             <div class="grid-content bg-purple-dark">
@@ -53,7 +52,7 @@ import homeList from './homeList'
 import editType from './editType'
 
 export default {
-  name: 'HelloWorld',
+  name: 'home',
   data () {
     return {
       optionsType: [
@@ -79,7 +78,7 @@ export default {
         }
       ],
       comname: 'homeList',
-      value: '全部',
+      value: '0',
       classDrag: false,
       imgAllInfo: [],
       elIconInf: {
@@ -93,7 +92,7 @@ export default {
     editType
   },
   created () {
-    console.log(this.$unitParams)
+
   },
   methods: {
     emitMessage (isSort, value) {
